@@ -5,51 +5,7 @@
 # @author: 35831
 # """
 
-# import streamlit as st
-# import pandas as pd
-# data1=pd.read_excel(r'C:\Users\35831\Desktop\风电数据.en.en.xlsx')
-# data2=pd.read_excel(r'C:\Users\35831\Desktop\风电数据.en.en.xlsx',sheet_name='Tendering Statistics')
-# data3=pd.read_excel(r'C:\Users\35831\Desktop\风电数据.en.en.xlsx',sheet_name='Summary of Policies')
-# data4=pd.read_excel(r'C:\Users\35831\Desktop\产业链成本计算.en.xlsx')
-# data2=data2.sort_values(by='year',ascending=True).dropna()
-# data2.set_index('year',inplace=True)
-# st.title("Photovoltaic enterprise industry research report")
-# st.header('Photovoltaic industry background')
-# st.write('Cumulative installed capacity of global wind power')
-# st.dataframe(data1)
-# st.write("Raw material price")
-# option1=st.selectbox(
-#     "The breed of your choice",
-#     data2.columns.tolist()
-#     )
-# st.line_chart(data2[option1].values)
-# option2=st.selectbox(
-#     "Select provincial policy",
-#     data3['Provinces.'].unique().tolist()
-#     )
-# st.dataframe(data3.loc[data3['Provinces.']==option2])
-# st.subheader('Company basic situation analysis')
-# df=pd.read_excel(r'C:\Users\35831\Desktop\企业数据.xlsx')
-# df.set_index('year',inplace=True)
-# option3 = st.selectbox(
-#     'Your chosen company',
-#     df['company'].unique().tolist()
-# )
-# st.write('Descriptive statistical analysis of company indicators')
-# st.dataframe(df.loc[df['company']==option3].iloc[:,3:].describe())
-# option4=st.selectbox(
-#     "You choose the metrics to analyze"
-#     ,df.columns[3:].tolist()
-#     )
-# st.line_chart(df.loc[df['company']==option3][option4])
 
-# st.subheader("Cost calculation of industrial chain")
-# option5=st.selectbox(
-#     "You choose the metrics to analyze"
-#     ,data4['Types of materials'].unique().tolist()
-#     )
-# st.dataframe(data4.loc[data4['Types of materials']==option5])
-# 显示用户选择的结果
 import pybroker
 from pybroker.ext.data import AKShare
 from pybroker import ExecContext, StrategyConfig, Strategy
@@ -133,7 +89,7 @@ min_weight = st.number_input(
 )
 
 max_weight = st.number_input(
-    "单个股票资产投资比例最小为(输入0.01的整数倍)",
+    "单个股票资产投资比例最大为(输入0.01的整数倍)",
     value=default_max_weight,  # 默认值
     min_value=0.0,  # 最小值
     max_value=1.0,  # 最大值
