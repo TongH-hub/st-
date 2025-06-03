@@ -2,7 +2,7 @@ pip==25.1.1
 lib-pybroker==1.2.9
 pandas==2.2.2
 Riskfolio-Lib==7.0.1
-streamlit==1.37.1
+streamlit
 numpy==1.26.4
 matplotlib==3.9.2
 akshare==1.16.95
