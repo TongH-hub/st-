@@ -50,13 +50,12 @@
 #     )
 # st.dataframe(data4.loc[data4['Types of materials']==option5])
 # 显示用户选择的结果
-import pybroker
-from pybroker.ext.data import AKShare
-from pybroker import ExecContext, StrategyConfig, Strategy
-from pybroker.ext.data import AKShare
+# import pybroker
+# from pybroker.ext.data import AKShare
+# from pybroker import ExecContext, StrategyConfig, Strategy
+# from pybroker.ext.data import AKShare
 import matplotlib.pyplot as plt
 import pandas as pd
-from datetime import datetime
 import riskfolio as rp
 import streamlit as st
 import numpy as np
@@ -169,6 +168,7 @@ portfolio_returns = (Y @ w).dropna()
 # 计算月度和年度回报率
 monthly_returns = portfolio_returns.resample('M').mean()
 annual_returns = portfolio_returns.resample('A').mean()
+qs.plots.monthly_heatmap(monthly_returns) 
 st.write(qs.stats.monthly_returns(portfolio_returns))
 
 
