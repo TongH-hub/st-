@@ -51,9 +51,9 @@
 # st.dataframe(data4.loc[data4['Types of materials']==option5])
 # 显示用户选择的结果
 # import pybroker
-# from pybroker.ext.data import AKShare
+from pybroker.ext.data import AKShare
 # from pybroker import ExecContext, StrategyConfig, Strategy
-# from pybroker.ext.data import AKShare
+from pybroker.ext.data import AKShare
 import matplotlib.pyplot as plt
 import pandas as pd
 import riskfolio as rp
